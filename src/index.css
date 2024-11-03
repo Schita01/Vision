@@ -10,10 +10,10 @@ body {
   max-width: 100%;
   min-height: 100vh;
   font-family: "Roboto", serif;
-  background-image: url('../src/assets/bg.webp');
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgb(16, 16, 20);
 }
 
 .container {
@@ -28,6 +28,7 @@ body {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
+  background-color: rgb(16, 16, 20);
 }
 
 .wrapper {

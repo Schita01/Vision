@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import videoFile from "../assets/esw.mp4"; // Main video file
-import geoAudio from "../assets/Recording.mp4.m4a"; // Georgian audio file
-import engAudio from "../assets/nvp.m4a"; // English audio file
-import rusAudio from "../assets/react.svg"; // Russian audio file
+import geoAudio from "../assets/GEO.mp4"; // Georgian audio file
+import engAudio from "../assets/ENG.mp3"; // English audio file
+import rusAudio from "../assets/RUS.mp3"; // Russian audio file
 
 interface VideoPlayerProps {
   selectedLanguage: string | null;
@@ -69,7 +69,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ selectedLanguage }) => {
             ref={videoRef}
             onEnded={handleVideoEnd}
             autoPlay
-            muted
+            
             key={selectedLanguage} // Video reloads on language change
           >
             <source src={getVideoSource()} type="video/mp4" />
