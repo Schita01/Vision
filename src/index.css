@@ -10,7 +10,10 @@ body {
   max-width: 100%;
   min-height: 100vh;
   font-family: "Roboto", serif;
-  background-color: #111;
+  background-image: url('../src/assets/bg.webp');
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -22,11 +25,9 @@ body {
 .main-section {
   display: flex;
   flex-direction: column;
-  gap: 60px;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  background-color: rgb(16, 16, 20);
 }
 
 .wrapper {
@@ -124,7 +125,7 @@ h1 {
 }
 
 .card-video {
-  background-image: url(../src/assets/download.webp);
+  background-image: url(../src/assets/bg.webp);
   width: 50%;
   height: 50vh;
   background-size: cover;
@@ -175,9 +176,25 @@ h1 {
 }
 
 .main-info-text {
-  color: #ffffffaf;
+  color: #ffffffaf; 
   font-size: 20px;
 }
-
-/*  */
-
+.scroll-bottom {
+  position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 10px 20px;
+    height: 95px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.center img {
+  margin-top: -25px;
+  margin-left: 15px;
+}

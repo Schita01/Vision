@@ -8,7 +8,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ setLanguageSelected }) =>
   const handleLanguageSelect = (lang: string) => {
     console.log(`Selected Language: ${lang}`);
     setLanguageSelected(lang); // ენების არჩევის შემდეგ ცვლილების ნიშანი
-  };
+  }; 
 
   return (
     <div className="modal">
