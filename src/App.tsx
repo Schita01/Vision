@@ -6,50 +6,35 @@ import "./App.css";
 import InfoSection from "./components/InfoSection";
 
 const App = () => {
-  // State to manage selected language
   const [languageSelected, setLanguageSelected] = useState<string | null>(null);
-  
-  // State to track the current section
   const [sectionIndex, setSectionIndex] = useState<number>(0);
-
-  // Dynamically set totalSections based on whether a language is selected
   const totalSections = languageSelected ? 4 : 1;
+  const [isScrolling, setIsScrolling] = useState(false);
 
-  // Debounce function to prevent rapid scroll
   const handleScroll = useCallback(
     (event: WheelEvent) => {
-      event.preventDefault(); // Prevent the default scroll behavior
+      if (isScrolling) return;
+      event.preventDefault();
+      setIsScrolling(true);
 
-      // Scrolling down
       if (event.deltaY > 0 && sectionIndex < totalSections - 1) {
         setSectionIndex((prevIndex) => prevIndex + 1);
-      } 
-      // Scrolling up
-      else if (event.deltaY < 0 && sectionIndex > 0) {
+      } else if (event.deltaY < 0 && sectionIndex > 0) {
         setSectionIndex((prevIndex) => prevIndex - 1);
       }
+
+      setTimeout(() => setIsScrolling(false), 900);
     },
-    [sectionIndex, totalSections]
+    [sectionIndex, totalSections, isScrolling]
   );
 
   useEffect(() => {
-    // Add scroll listener with a debounce effect
-    let scrollTimeout: any;
-    const debouncedHandleScroll = (event: WheelEvent) => {
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => handleScroll(event), 200); // Adjust debounce time if necessary
-    };
-
-    window.addEventListener("wheel", debouncedHandleScroll, { passive: false });
-
-    // Clean up the event listener
+    window.addEventListener("wheel", handleScroll, { passive: false });
     return () => {
-      window.removeEventListener("wheel", debouncedHandleScroll);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
+      window.removeEventListener("wheel", handleScroll);
     };
   }, [handleScroll]);
 
-  // Animation variants for smooth section transitions
   const sectionVariants = {
     enter: { opacity: 0, y: "100vh" },
     center: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -58,7 +43,6 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* Section 1: Language Modal or VideoPlayer */}
       <motion.div
         className="section"
         initial="enter"
@@ -73,7 +57,6 @@ const App = () => {
       </motion.div>
 
       <div className="bg">
-          {/* Section 2: InfoSection (only visible if languageSelected is set) */}
         {languageSelected && (
           <motion.div
             className="section"
@@ -85,7 +68,6 @@ const App = () => {
           </motion.div>
         )}
 
-        {/* Section 3: HTTP Calls Section */}
         {languageSelected && (
           <motion.div
             className="section"
@@ -99,7 +81,6 @@ const App = () => {
           </motion.div>
         )}
 
-        {/* Section 4: MVP Calls Section */}
         {languageSelected && (
           <motion.div
             className="section"
@@ -113,7 +94,6 @@ const App = () => {
           </motion.div>
         )}
       </div>
-      
     </div>
   );
 };
