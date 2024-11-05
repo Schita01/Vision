@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import videoFile from "../assets/test-vid.mp4"; // Main video file
+import videoFile from "../assets/esw.mp4"; // Main video file
 import geoAudio from "../assets/GEO.mp4"; // Georgian audio file
 import engAudio from "../assets/ENG.mp3"; // English audio file
 import rusAudio from "../assets/RUS.mp3"; // Russian audio file
