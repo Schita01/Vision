@@ -69,7 +69,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ selectedLanguage }) => {
             ref={videoRef}
             onEnded={handleVideoEnd}
             autoPlay
-            
             key={selectedLanguage} // Video reloads on language change
           >
             <source src={getVideoSource()} type="video/mp4" />

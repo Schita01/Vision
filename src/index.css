@@ -13,7 +13,9 @@ body {
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(16, 16, 20);
+  background-color: black;
+  background-image: url(../src/assets/background.png);
+
 }
 
 .container {
@@ -27,8 +29,9 @@ body {
   flex-direction: column;
   width: 100%;
   max-width: 100%;
-  min-height: 100vh;
-  background-color: rgb(16, 16, 20);
+  align-items: center;
+  /* height: 100vh !important; */
+  /* background-color: rgb(16, 16, 20); */
 }
 
 .wrapper {
@@ -57,7 +60,9 @@ h1 {
   max-width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 50px;
   justify-content: center;
   overflow: hidden;
   background-color: rgb(0, 0, 0);
@@ -112,6 +117,16 @@ h1 {
   background-color: rgb(24, 24, 28);
 
 }
+.card-2 {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  background-color: rgb(24, 24, 28);
+
+}
 
 .card-info {
   display: flex;
@@ -124,11 +139,24 @@ h1 {
   padding: 0px 10px 0px 0px;
   
 }
+.card-info-2 {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 10px;  
+  width: 45%;
+  max-width: 100%;
+  height: 45vh;
+  padding: 0px 10px 0px 25px;
+  
+}
+
 
 .card-video {
-  background-image: url(../src/assets/bg.webp);
+  /* background-image: url(../src/assets/bg.webp); */
+  background-color: red;
   width: 50%;
-  height: 50vh;
+  height: 70vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

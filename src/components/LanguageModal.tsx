@@ -11,9 +11,10 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ setLanguageSelected }) =>
   }; 
 
   return (
-    <div className="modal">
+    // <div className="modal">
+      <>
       <h1>FT</h1>
-      <select
+      <select 
         className="language-select"
         onChange={(e) => handleLanguageSelect(e.target.value)}
         defaultValue=""
@@ -25,7 +26,8 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ setLanguageSelected }) =>
         <option value="eng">English</option>
         <option value="rus">Русский</option>
       </select>
-    </div>
+      </>
+    // </div>
   );
 };
 
